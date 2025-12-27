@@ -36,6 +36,7 @@ Nuestra **API esta diseñada para permitir la integracion simple y escalable, or
 - 🧪 Pruebas de la API:
 
 ## 👥 Equipo de desarrollo
+---
 Para asegurar una correcta planificación, desarrollo e integración de la solución, el proyecto se organizó en equipos de trabajo con líderes asignados para cada área.
 
 ### 🔹 Liderazgo del proyecto 
