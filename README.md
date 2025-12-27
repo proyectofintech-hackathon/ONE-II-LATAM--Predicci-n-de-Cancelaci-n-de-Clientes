@@ -44,7 +44,7 @@ Responsable de la coordinación general, organización del trabajo y comunicaci�
 
 **Nombre Apellido:Sergio Narciso López**
 
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-Perfil-blue?logo=linkedin)](https://www.linkedin.com/in/linda-roc%C3%ADo-web051275/)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-Perfil-blue?logo=linkedin)](https://www.linkedin.com/in/sergionarcisoftware/)
 
 [![GitHub](https://img.shields.io/badge/GitHub-Repo-black?logo=github)](https://github.com/Narciso43)
 
@@ -52,9 +52,9 @@ Responsable de la coordinación general, organización del trabajo y comunicaci�
 
 **Nombre Apellido:Sergio Narciso López**
 
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-Perfil-blue?logo=linkedin)]()
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-Perfil-blue?logo=linkedin)](https://www.linkedin.com/in/sergionarcisoftware/)
 
-[![GitHub](https://img.shields.io/badge/GitHub-Repo-black?logo=github)]()
+[![GitHub](https://img.shields.io/badge/GitHub-Repo-black?logo=github)](https://github.com/Narciso43)
 
 👤 **Líder del equipo Back-end**
 
