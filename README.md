@@ -58,11 +58,11 @@ Responsable de la coordinación general, organización del trabajo y comunicaci�
 
 👤 **Líder del equipo Back-end**
 
-**Nombre Apellido:**
+**Nombre Apellido: Juan Huina**
 
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-Perfil-blue?logo=linkedin)]()
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-Perfil-blue?logo=linkedin)](https://www.linkedin.com/in/juan-huina-webdesign/)
 
-[![GitHub](https://img.shields.io/badge/GitHub-Repo-black?logo=github)]()
+[![GitHub](https://img.shields.io/badge/GitHub-Repo-black?logo=github)](https://github.com/jhuina)
 
 ## 📊 Data Science
 
@@ -99,17 +99,17 @@ Responsable de la coordinación general, organización del trabajo y comunicaci�
 
 **👥​ Equipo de Back-end**
 
-**Nombre Apellido:**
+**Nombre Apellido: Juan Huina**
 
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-Perfil-blue?logo=linkedin)]()
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-Perfil-blue?logo=linkedin)](https://www.linkedin.com/in/juan-huina-webdesign/)
 
-[![GitHub](https://img.shields.io/badge/GitHub-Repo-black?logo=github)]()
+[![GitHub](https://img.shields.io/badge/GitHub-Repo-black?logo=github)](https://github.com/jhuina)
 
-**Nombre Apellido:**
+**Nombre Apellido: Ianjaner alfonso beltran guañarita**
 
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-Perfil-blue?logo=linkedin)]()
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-Perfil-blue?logo=linkedin)](www.linkedin.com/in/ianjaner-alfonso-beltran-guañarita)
 
-[![GitHub](https://img.shields.io/badge/GitHub-Repo-black?logo=github)]()
+[![GitHub](https://img.shields.io/badge/GitHub-Repo-black?logo=github)](https://github.com/ianjaner75)
 
   ## 🛠️ Tecnologías utilizadas 
 ## 🐍 **Data Science & Analytics**
