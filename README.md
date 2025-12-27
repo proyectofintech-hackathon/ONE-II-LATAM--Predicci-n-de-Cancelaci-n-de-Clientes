@@ -82,11 +82,11 @@ Responsable de la coordinación general, organización del trabajo y comunicaci�
 
 [![GitHub](https://img.shields.io/badge/GitHub-Repo-black?logo=github)]()
 
-**Nombre Apellido:**
+**Nombre Apellido:Nidia Lizeth Sánchez Chavarría**
 
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-Perfil-blue?logo=linkedin)]()
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-Perfil-blue?logo=linkedin)](https://www.linkedin.com/in/nidia-lizeth-sanchez-47462737b/)
 
-[![GitHub](https://img.shields.io/badge/GitHub-Repo-black?logo=github)]()
+[![GitHub](https://img.shields.io/badge/GitHub-Repo-black?logo=github)](https://github.com/AcidTwinsn)
 
 **Nombre Apellido:**
 
