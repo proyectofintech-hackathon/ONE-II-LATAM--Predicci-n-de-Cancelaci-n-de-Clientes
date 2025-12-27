@@ -39,79 +39,68 @@ Nuestra **API esta diseñada para permitir la integracion simple y escalable, or
 ---
 Para asegurar una correcta planificación, desarrollo e integración de la solución, el proyecto se organizó en equipos de trabajo con líderes asignados para cada área.
 
-### 🔹 Lider del proyecto 
-Responsable de la coordinación general, organización del trabajo y comunicación entre los equipos.
+### 🔹 Lider del proyecto :
+  Responsable de la coordinación general, organización del trabajo y comunicación entre los equipos.
 
-**Nombre Apellido:Sergio Narciso López**
+- ***Sergio Narciso López***
 
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-Perfil-blue?logo=linkedin)](https://www.linkedin.com/in/sergionarcisoftware/)
+  [![LinkedIn](https://img.shields.io/badge/LinkedIn-Perfil-blue?logo=linkedin)](https://www.linkedin.com/in/sergionarcisoftware/)
+  [![GitHub](https://img.shields.io/badge/GitHub-Repo-black?logo=github)](https://github.com/Narciso43)
 
-[![GitHub](https://img.shields.io/badge/GitHub-Repo-black?logo=github)](https://github.com/Narciso43)
+### 👤​ Líder del equipo de Data Science 
 
-👤​ **Líder del equipo de Data Science**
+- ***Sergio Narciso López***
 
-**Nombre Apellido:Sergio Narciso López**
+  [![LinkedIn](https://img.shields.io/badge/LinkedIn-Perfil-blue?logo=linkedin)](https://www.linkedin.com/in/sergionarcisoftware/)
+  [![GitHub](https://img.shields.io/badge/GitHub-Repo-black?logo=github)](https://github.com/Narciso43)
 
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-Perfil-blue?logo=linkedin)](https://www.linkedin.com/in/sergionarcisoftware/)
+### 👤 Líder del equipo Back-end
 
-[![GitHub](https://img.shields.io/badge/GitHub-Repo-black?logo=github)](https://github.com/Narciso43)
+- ***Juan Huina***
 
-👤 **Líder del equipo Back-end**
-
-**Nombre Apellido: Juan Huina**
-
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-Perfil-blue?logo=linkedin)](https://www.linkedin.com/in/juan-huina-webdesign/)
-
-[![GitHub](https://img.shields.io/badge/GitHub-Repo-black?logo=github)](https://github.com/jhuina)
+  [![LinkedIn](https://img.shields.io/badge/LinkedIn-Perfil-blue?logo=linkedin)](https://www.linkedin.com/in/juan-huina-webdesign/)
+  [![GitHub](https://img.shields.io/badge/GitHub-Repo-black?logo=github)](https://github.com/jhuina)
 
 ## 📊 Data Science
 
 **👥​ Equipo de Data Science**
 
-**Nombre Apellido: Gonzalo Costela**
+- ***Gonzalo Costela***
+  
+  [![LinkedIn](https://img.shields.io/badge/LinkedIn-Perfil-blue?logo=linkedin)](/in/gonzalocostela) 
+  [![GitHub](https://img.shields.io/badge/GitHub-Repo-black?logo=github)]()
 
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-Perfil-blue?logo=linkedin)](/in/gonzalocostela)
+- ***Linda Rocio Olmedo Reyes***
+  
+  [![LinkedIn](https://img.shields.io/badge/LinkedIn-Perfil-blue?logo=linkedin)](https://www.linkedin.com/in/linda-roc%C3%ADo-web051275/)
+  [![GitHub](https://img.shields.io/badge/GitHub-Repo-black?logo=github)]()
 
-[![GitHub](https://img.shields.io/badge/GitHub-Repo-black?logo=github)]()
+- ***Nidia Lizeth Sánchez Chavarría***
+  
+  [![LinkedIn](https://img.shields.io/badge/LinkedIn-Perfil-blue?logo=linkedin)](https://www.linkedin.com/in/nidia-lizeth-sanchez-47462737b/)
+  [![GitHub](https://img.shields.io/badge/GitHub-Repo-black?logo=github)](https://github.com/AcidTwinsn)
 
-
-
-**Nombre Apellido: Linda Rocio Olmedo Reyes**
-
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-Perfil-blue?logo=linkedin)](https://www.linkedin.com/in/linda-roc%C3%ADo-web051275/)
-
-[![GitHub](https://img.shields.io/badge/GitHub-Repo-black?logo=github)]()
-
-**Nombre Apellido:Nidia Lizeth Sánchez Chavarría**
-
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-Perfil-blue?logo=linkedin)](https://www.linkedin.com/in/nidia-lizeth-sanchez-47462737b/)
-
-[![GitHub](https://img.shields.io/badge/GitHub-Repo-black?logo=github)](https://github.com/AcidTwinsn)
-
-**Nombre Apellido:**
-
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-Perfil-blue?logo=linkedin)]()
-
-[![GitHub](https://img.shields.io/badge/GitHub-Repo-black?logo=github)]()
-
+- ***Jessica Robles***
+  
+  [![LinkedIn](https://img.shields.io/badge/LinkedIn-Perfil-blue?logo=linkedin)](https://www.linkedin.com/in/robles-jessica-carolina/)
+  [![GitHub](https://img.shields.io/badge/GitHub-Repo-black?logo=github)](https://github.com/NyxJr)
 
 ## 👨‍💻​ Back-end
 
 **👥​ Equipo de Back-end**
 
-**Nombre Apellido: Juan Huina**
+- ***Juan Huina***
+  
+  [![LinkedIn](https://img.shields.io/badge/LinkedIn-Perfil-blue?logo=linkedin)](https://www.linkedin.com/in/juan-huina-webdesign/)
+  [![GitHub](https://img.shields.io/badge/GitHub-Repo-black?logo=github)](https://github.com/jhuina)
 
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-Perfil-blue?logo=linkedin)](https://www.linkedin.com/in/juan-huina-webdesign/)
+- ***Ianjaner alfonso beltran guañarita***
+  
+  [![LinkedIn](https://img.shields.io/badge/LinkedIn-Perfil-blue?logo=linkedin)](www.linkedin.com/in/ianjaner-alfonso-beltran-guañarita)
+  [![GitHub](https://img.shields.io/badge/GitHub-Repo-black?logo=github)](https://github.com/ianjaner75)
 
-[![GitHub](https://img.shields.io/badge/GitHub-Repo-black?logo=github)](https://github.com/jhuina)
+## 🛠️ Tecnologías utilizadas 
 
-**Nombre Apellido: Ianjaner alfonso beltran guañarita**
-
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-Perfil-blue?logo=linkedin)](www.linkedin.com/in/ianjaner-alfonso-beltran-guañarita)
-
-[![GitHub](https://img.shields.io/badge/GitHub-Repo-black?logo=github)](https://github.com/ianjaner75)
-
-  ## 🛠️ Tecnologías utilizadas 
 ## 🐍 **Data Science & Analytics**
 | Tecnología | Uso Principal | Nivel |
 |------------|--------------|-------|
@@ -140,33 +129,46 @@ Responsable de la coordinación general, organización del trabajo y comunicaci�
 
 ### **Equipo Data Science**
 
-lenguaje_principal: Python
-entorno_desarrollo:
+Lenguaje_principal: Python
+
+Entorno_desarrollo:
+
   - Google Colab (prototipado)
-librerias_principales:
+
+Librerias_principales:
   - Pandas (análisis)
   - NumPy (cálculo)
   - Scikit-learn (ML)
   - Matplotlib/Seaborn (visualización)
-herramientas:
+    
+Herramientas:
   - Git/GitHub
   - DVC (Data Version Control) Nota: Por Definir
- ### **Equipo Backend**
-lenguaje_principal: Java 21
-framework: Spring Boot 3
-modulos_spring:
+
+### **Equipo Backend**
+
+Lenguaje_principal: Java 21
+
+Framework: Spring Boot 3
+
+Modulos_spring:
   - Spring Web (REST APIs)
   - Spring Boot JPA (ORM)
   - Spring Security
-base_datos: PostgreSQL
-build_tool: Maven
-herramientas:
+
+Base_datos: PostgreSQL
+
+Build_tool: Maven
+
+Herramientas:
   - Postman (API testing)
   - Docker (contenedores)
- ### **Equipo Frontend**
-  - Nota: Falta Poner Tecnologias y Herramientas
 
-# Diagrama de  Arquitectura del Proyecto
+### **Equipo Frontend**
+  - Tecnologias (en construccion)
+  - Herramientas (en construccion)
+
+# Diagrama de Arquitectura del Proyecto
 
 ```mermaid
 graph TD
@@ -196,7 +198,6 @@ graph TB
     I[Google Colab] --> B
     J[Maven] --> D
  ```
-
 ![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white)
 ![Pandas](https://img.shields.io/badge/Pandas-150458?style=for-the-badge&logo=pandas&logoColor=white)
 ![Java](https://img.shields.io/badge/Java-ED8B00?style=for-the-badge&logo=openjdk&logoColor=white)
