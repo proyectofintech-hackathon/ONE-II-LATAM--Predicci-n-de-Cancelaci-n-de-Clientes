@@ -1,6 +1,5 @@
-# 📊 Predicción de Cancelación de Tarjetas de Crédito
----
-
+# ⚡Krypton 
+## Predicción de Cancelación de Tarjetas de Crédito
 Este proyecto tiene como objetivo desarrollar una solución orientada a la **predicción de cancelación de tarjetas de crédito** en clientes de empresas del sector **Fintech**.
 
 La cancelación de clientes (*churn*) representa uno de los principales desafíos en los modelos de negocio basados en servicios financieros. Anticipar este comportamiento permite a las empresas implementar estrategias de retención más efectivas, optimizar recursos y mejorar la experiencia del usuario.
