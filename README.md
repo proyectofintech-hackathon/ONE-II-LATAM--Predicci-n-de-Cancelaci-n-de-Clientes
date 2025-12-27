@@ -92,4 +92,12 @@ Encargado del desarrollo de la API
 -  GitHub:
 -  linkedin:
 
-  
+  ### 🛠️ Tecnologías utilizadas
+- **Python**
+-  **Pandas** 
+- **Google Colab**
+- **Git / GitHub**
+- **No Country**
+-  **Trello**
+-  **Markdown**
+ 
