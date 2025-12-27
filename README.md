@@ -43,52 +43,73 @@ Para asegurar una correcta planificación, desarrollo e integración de la soluc
 Responsable de la coordinación general, organización del trabajo y comunicación entre los equipos.
 
 **Nombre Apellido:**
--  GitHub:
--  linkedin:
+
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-Perfil-blue?logo=linkedin)]()
+
+[![GitHub](https://img.shields.io/badge/GitHub-Repo-black?logo=github)]()
 
 👤​ **Líder del equipo de Data Science**
 
 **Nombre Apellido:**
--  GitHub:
--  linkedin:
+
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-Perfil-blue?logo=linkedin)]()
+
+[![GitHub](https://img.shields.io/badge/GitHub-Repo-black?logo=github)]()
 
 👤 **Líder del equipo Back-end**
 
 **Nombre Apellido:**
--  GitHub:
--  linkedin:
+
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-Perfil-blue?logo=linkedin)]()
+
+[![GitHub](https://img.shields.io/badge/GitHub-Repo-black?logo=github)]()
 
 ## 📊 Data Science
 
 **👥​ Equipo de Data Science**
 
-**Nombre Apellido:**
--  GitHub:
--  linkedin:
+**Nombre Apellido: Gonzalo Costela**
+
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-Perfil-blue?logo=linkedin)](/in/gonzalocostela)
+
+[![GitHub](https://img.shields.io/badge/GitHub-Repo-black?logo=github)]()
+
+
+
+**Nombre Apellido: Linda Rocio Olmedo Reyes**
+
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-Perfil-blue?logo=linkedin)](https://www.linkedin.com/in/linda-roc%C3%ADo-web051275/)
+
+[![GitHub](https://img.shields.io/badge/GitHub-Repo-black?logo=github)]()
 
 **Nombre Apellido:**
--  GitHub:
--  linkedin:
+
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-Perfil-blue?logo=linkedin)]()
+
+[![GitHub](https://img.shields.io/badge/GitHub-Repo-black?logo=github)]()
 
 **Nombre Apellido:**
--  GitHub:
--  linkedin:
 
-**Nombre Apellido:**
--  GitHub:
--  linkedin:
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-Perfil-blue?logo=linkedin)]()
+
+[![GitHub](https://img.shields.io/badge/GitHub-Repo-black?logo=github)]()
+
 
 ## 👨‍💻​ Back-end
 
 **👥​ Equipo de Back-end**
 
 **Nombre Apellido:**
--  GitHub:
--  linkedin:
+
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-Perfil-blue?logo=linkedin)]()
+
+[![GitHub](https://img.shields.io/badge/GitHub-Repo-black?logo=github)]()
 
 **Nombre Apellido:**
--  GitHub:
--  linkedin:
+
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-Perfil-blue?logo=linkedin)]()
+
+[![GitHub](https://img.shields.io/badge/GitHub-Repo-black?logo=github)]()
 
   ## 🛠️ Tecnologías utilizadas
 - **Python**
