@@ -117,6 +117,12 @@ Responsable de la coordinación general, organización del trabajo y comunicaci�
 - **Google Colab**
 - **Git / GitHub**
 - **No Country**
+- **Java 21**
+-  **Spring Boot 3** 
+- **Spring Web**
+- **Spring Boot JPA**
+- **PostgreSQL**
+- **Maven**
 -  **Trello**
 -  **Markdown**
  
