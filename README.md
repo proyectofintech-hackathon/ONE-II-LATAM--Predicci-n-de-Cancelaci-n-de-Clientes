@@ -102,6 +102,7 @@ Para asegurar una correcta planificación, desarrollo e integración de la soluc
 ## 🛠️ Tecnologías utilizadas 
 
 ## 🐍 **Data Science & Analytics**
+
 | Tecnología | Uso Principal | Nivel |
 |------------|--------------|-------|
 | ![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white) | Lenguaje principal para análisis y ML | Avanzado |
