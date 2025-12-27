@@ -39,7 +39,7 @@ Nuestra **API esta diseñada para permitir la integracion simple y escalable, or
 ---
 Para asegurar una correcta planificación, desarrollo e integración de la solución, el proyecto se organizó en equipos de trabajo con líderes asignados para cada área.
 
-### 🔹 Liderazgo del proyecto 
+### 🔹 Lider del proyecto 
 Responsable de la coordinación general, organización del trabajo y comunicación entre los equipos.
 
 **Nombre Apellido:**
@@ -58,14 +58,9 @@ Responsable de la coordinación general, organización del trabajo y comunicaci�
 -  GitHub:
 -  linkedin:
 
-### 📊 Data Science
-Preparación del dataset, limpieza de datos, entrenamiento y validación del modelo.
+## 📊 Data Science
 
-### 👥​ Equipo de Data Science
-
-**Nombre Apellido:**
--  GitHub:
--  linkedin:
+**👥​ Equipo de Data Science**
 
 **Nombre Apellido:**
 -  GitHub:
@@ -79,10 +74,13 @@ Preparación del dataset, limpieza de datos, entrenamiento y validación del mod
 -  GitHub:
 -  linkedin:
 
-### 👨‍💻​ Back-end
-Encargado del desarrollo de la API
+**Nombre Apellido:**
+-  GitHub:
+-  linkedin:
 
-### 👥​ Equipo de Back-end
+## 👨‍💻​ Back-end
+
+**👥​ Equipo de Back-end**
 
 **Nombre Apellido:**
 -  GitHub:
@@ -92,7 +90,7 @@ Encargado del desarrollo de la API
 -  GitHub:
 -  linkedin:
 
-  ### 🛠️ Tecnologías utilizadas
+  ## 🛠️ Tecnologías utilizadas
 - **Python**
 -  **Pandas** 
 - **Google Colab**
