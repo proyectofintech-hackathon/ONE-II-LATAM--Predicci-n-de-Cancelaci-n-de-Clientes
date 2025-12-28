@@ -8,39 +8,40 @@ import org.springframework.transaction.annotation.Transactional; // Importante p
 import lombok.RequiredArgsConstructor; // Lombok nos facilita lo el constructor
 import java.util.List;
 import java.util.Optional;// Para el metido para buscar por ID
-
 @Service
-@RequiredArgsConstructor // Inyecta el repositorio automáticamente
+@RequiredArgsConstructor
 public class ClienteService {
-
     private final ClienteRepository clienteRepository;
 
-    // Método para guardar un cliente nuevo
     @Transactional
     public Cliente guardarCliente(Cliente cliente) {
         return clienteRepository.save(cliente);
     }
 
-    // Método para buscar todos (útil para pruebas)
     public List<Cliente> listarClientes() {
         return clienteRepository.findAll();
     }
 
-    // Método para buscar por ID
-    public Optional<Cliente> buscarPorId(Long id) {
+    // Cambiamos Long a Integer
+    public Optional<Cliente> buscarPorId(Integer id) {
         return clienteRepository.findById(id);
     }
+
     public Cliente convertirADominio(ClienteDTO dto) {
         Cliente cliente = new Cliente();
-        // Aquí se pasan los datos del DTO a la Entidad
-        cliente.setCustomerAge(dto.getCustomerAge());
-        cliente.setGender(dto.getGender());
-        cliente.setEducationLevel(dto.getEducationLevel());
-        cliente.setMaritalStatus(dto.getMaritalStatus());
-        cliente.setIncomeCategoryLimpio(dto.getIncomeCategoryLimpio());
-        cliente.setCardCategory(dto.getCardCategory());
+    // Actualizacion de los atributos de acuerdo a la bd de el equipo de data science
 
-        // ... así con los campos importantes si no faltan tokaria hablar con el grupo
+        cliente.setAttritionFlag(dto.getAttritionFlag());
+        cliente.setCustomerAge(dto.getCustomerAge());
+        cliente.setMonthsInactive12Mon(dto.getMonthsInactive12Mon());
+        cliente.setContactsCount12Mon(dto.getContactsCount12Mon());
+        cliente.setTotalCtChngQ4Q1(dto.getTotalCtChngQ4Q1());
+        cliente.setAvgUtilizationRatio(dto.getAvgUtilizationRatio());
+        cliente.setLowRelationshipCount(dto.getLowRelationshipCount());
+        cliente.setGenderM(dto.getGenderM());
+        cliente.setCardCategoryGold(dto.getCardCategoryGold());
+        cliente.setCardCategoryPlatinum(dto.getCardCategoryPlatinum());
+        cliente.setCardCategorySilver(dto.getCardCategorySilver());
         return cliente;
     }
 }

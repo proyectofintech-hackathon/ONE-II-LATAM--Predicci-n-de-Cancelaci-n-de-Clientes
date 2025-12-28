@@ -18,7 +18,7 @@ public class PrediccionService {
         return prediccionRepository.save(prediccion);
     }
 
-    public List<PrediccionChurn> obtenerPrediccionesPorCliente(Long clienteId) {
+    public List<PrediccionChurn> obtenerPrediccionesPorCliente(Integer clienteId) {
         return prediccionRepository.findByClienteId(clienteId);
     }
 }

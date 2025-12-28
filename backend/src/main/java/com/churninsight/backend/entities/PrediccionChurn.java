@@ -9,7 +9,7 @@ import java.time.LocalDateTime;
 
 @Entity
 @Table(name = "predicciones_churn")
-@Data // Crea Getters, Setters, toString, etc.
+@Data
 @NoArgsConstructor
 @AllArgsConstructor
 public class PrediccionChurn {
@@ -17,13 +17,14 @@ public class PrediccionChurn {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @ManyToOne // Relación con la tabla clientes
+    @ManyToOne
     @JoinColumn(name = "cliente_id", nullable = false)
     private Cliente cliente;
 
-    private BigDecimal probabilidadChurn;
+    @Column(precision = 10, scale = 4)
+    private BigDecimal probabilidad;
+
     private Boolean prediccion;
 
-    // Se inicializa automáticamente con la fecha/hora actual
     private LocalDateTime fechaPrediccion = LocalDateTime.now();
 }

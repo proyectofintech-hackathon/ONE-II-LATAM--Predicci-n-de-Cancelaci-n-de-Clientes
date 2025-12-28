@@ -8,5 +8,5 @@ import java.util.List;
 @Repository
 public interface PrediccionRepository extends JpaRepository<PrediccionChurn, Long> {
     // Eesto nosva a servir pra predicciones de un cliente específico
-    List<PrediccionChurn> findByClienteId(Long clienteId);
+    List<PrediccionChurn> findByClienteId(Integer clienteId);
 }

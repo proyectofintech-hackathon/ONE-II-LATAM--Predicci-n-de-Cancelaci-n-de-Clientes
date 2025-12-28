@@ -8,31 +8,28 @@ import java.math.BigDecimal;
 
 @Entity
 @Table(name = "clientes")
-@Data // Esto ps nos ayuda a  generar Getters, Setters, toString, equals y hashCode automáticamente mas facil
-@NoArgsConstructor // Genera constructor vacío ademas es nos da versatilidad (obligatorio para JPA)
-@AllArgsConstructor // Genera constructor con todos los campos
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
 public class Cliente {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
-    private String attritionFlag;
+    private Integer id;
+
+    private Integer attritionFlag;
     private Integer customerAge;
-    private String gender;
-    private Integer dependentCount;
-    private String educationLevel;
-    private String maritalStatus;
-    private String incomeCategoryLimpio;
-    private String cardCategory;
-    private Integer monthsOnBook;
-    private Integer totalRelationshipCount;
     private Integer monthsInactive12Mon;
     private Integer contactsCount12Mon;
-    private BigDecimal creditLimit;
-    private BigDecimal totalRevolvingBal;
-    private BigDecimal avgOpenToBuy;
-    private BigDecimal totalAmtChngQ4Q1;
-    private BigDecimal totalTransAmt;
-    private Integer totalTransCt;
+
+    @Column(precision = 10, scale = 4)
     private BigDecimal totalCtChngQ4Q1;
+
+    @Column(precision = 10, scale = 4)
     private BigDecimal avgUtilizationRatio;
+
+    private Integer lowRelationshipCount;
+    private Integer genderM;
+    private Integer cardCategoryGold;
+    private Integer cardCategoryPlatinum;
+    private Integer cardCategorySilver;
 }

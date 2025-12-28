@@ -7,7 +7,7 @@ import java.math.BigDecimal;
 @Data
 @AllArgsConstructor
 public class PrediccionResponseDTO {
-    private String prevision; // Ejemplo: "Va a cancelar,continuar" etc.
-    private BigDecimal probabilidad; // Ejemplo: 0.81 o cualquier valor entre 0 y 1 creo yo
-    private Long clienteId;
+    private String prevision;
+    private BigDecimal probabilidad;
+    private Integer clienteId; // Cambiado a Integer para coincidir con el ID del Cliente
 }

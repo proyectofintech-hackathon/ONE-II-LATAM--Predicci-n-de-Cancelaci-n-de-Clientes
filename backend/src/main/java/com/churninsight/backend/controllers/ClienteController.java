@@ -30,7 +30,7 @@ public class ClienteController {
 
     // Endpoint para buscar un cliente por ID
     @GetMapping("/{id}")
-    public ResponseEntity<Cliente> obtenerPorId(@PathVariable Long id) {
+    public ResponseEntity<Cliente> obtenerPorId(@PathVariable Integer id) {
         return clienteService.buscarPorId(id)
                 .map(ResponseEntity::ok)
                 .orElse(ResponseEntity.notFound().build());
