@@ -55,10 +55,10 @@ Para asegurar una correcta planificación, desarrollo e integración de la soluc
 
 ### 👤 Líder del equipo Back-end
 
-- ***Juan Huina***
+- ***Ianjaner alfonso beltran guañarita***
 
-  [![LinkedIn](https://img.shields.io/badge/LinkedIn-Perfil-blue?logo=linkedin)](https://www.linkedin.com/in/juan-huina-webdesign/)
-  [![GitHub](https://img.shields.io/badge/GitHub-Repo-black?logo=github)](https://github.com/jhuina)
+  [![LinkedIn](https://img.shields.io/badge/LinkedIn-Perfil-blue?logo=linkedin)](www.linkedin.com/in/ianjaner-alfonso-beltran-guañarita)
+  [![GitHub](https://img.shields.io/badge/GitHub-Repo-black?logo=github)](https://github.com/ianjaner75)
 
 ## 📊 Data Science
 
