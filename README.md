@@ -57,7 +57,7 @@ Para asegurar una correcta planificación, desarrollo e integración de la soluc
 
 - ***Ianjaner alfonso beltran guañarita***
 
-  [![LinkedIn](https://img.shields.io/badge/LinkedIn-Perfil-blue?logo=linkedin)](www.linkedin.com/in/ianjaner-alfonso-beltran-guañarita)
+  [![LinkedIn](https://img.shields.io/badge/LinkedIn-Perfil-blue?logo=linkedin)](https://www.linkedin.com/in/ianjaner-alfonso-beltran-guañarita)
   [![GitHub](https://img.shields.io/badge/GitHub-Repo-black?logo=github)](https://github.com/ianjaner75)
 
 ## 📊 Data Science
@@ -66,7 +66,7 @@ Para asegurar una correcta planificación, desarrollo e integración de la soluc
 
 - ***Gonzalo Costela***
   
-  [![LinkedIn](https://img.shields.io/badge/LinkedIn-Perfil-blue?logo=linkedin)](www.linkedin.com/in/gonzalocostela) 
+  [![LinkedIn](https://img.shields.io/badge/LinkedIn-Perfil-blue?logo=linkedin)](https://www.linkedin.com/in/gonzalocostela) 
   [![GitHub](https://img.shields.io/badge/GitHub-Repo-black?logo=github)](https://github.com/Haruki-24)
 
 - ***Linda Rocio Olmedo Reyes***
@@ -95,7 +95,7 @@ Para asegurar una correcta planificación, desarrollo e integración de la soluc
 
 - ***Ianjaner alfonso beltran guañarita***
   
-  [![LinkedIn](https://img.shields.io/badge/LinkedIn-Perfil-blue?logo=linkedin)](www.linkedin.com/in/ianjaner-alfonso-beltran-guañarita)
+  [![LinkedIn](https://img.shields.io/badge/LinkedIn-Perfil-blue?logo=linkedin)](https://www.linkedin.com/in/ianjaner-alfonso-beltran-guañarita)
   [![GitHub](https://img.shields.io/badge/GitHub-Repo-black?logo=github)](https://github.com/ianjaner75)
 
 ## 🛠️ Tecnologías utilizadas 
