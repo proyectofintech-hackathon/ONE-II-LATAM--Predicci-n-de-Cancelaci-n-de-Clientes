@@ -66,8 +66,8 @@ Para asegurar una correcta planificación, desarrollo e integración de la soluc
 
 - ***Gonzalo Costela***
   
-  [![LinkedIn](https://img.shields.io/badge/LinkedIn-Perfil-blue?logo=linkedin)](/in/gonzalocostela) 
-  [![GitHub](https://img.shields.io/badge/GitHub-Repo-black?logo=github)]()
+  [![LinkedIn](https://img.shields.io/badge/LinkedIn-Perfil-blue?logo=linkedin)](www.linkedin.com/in/gonzalocostela) 
+  [![GitHub](https://img.shields.io/badge/GitHub-Repo-black?logo=github)](https://github.com/Haruki-24)
 
 - ***Linda Rocio Olmedo Reyes***
   
