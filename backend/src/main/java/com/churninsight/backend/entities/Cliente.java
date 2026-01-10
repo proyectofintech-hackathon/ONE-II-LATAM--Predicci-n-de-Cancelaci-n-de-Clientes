@@ -20,7 +20,7 @@ public class Cliente {
     private Integer customerAge;
     private Integer monthsInactive12Mon;
     private Integer contactsCount12Mon;
-
+    //colinas de precision y escala ajustadas segun los datos esperados
     @Column(precision = 10, scale = 4)
     private BigDecimal totalCtChngQ4Q1;
 

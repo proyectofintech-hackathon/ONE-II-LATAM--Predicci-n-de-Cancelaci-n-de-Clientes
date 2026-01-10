@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Dashboard - KRIPTON</title>
+    <link rel="stylesheet" href="css/dashboard.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+<div class="app-container">
+    <aside class="sidebar">
+        <div class="sidebar-header">
+            <img src="/img/logo-kripton.jpeg" alt="Logo" class="mini-big">
+            <span>KRIPTON</span>
+        </div>
+        <nav class="sidebar-nav">
+            <a id="nav-dashboard" onclick="mostrarSeccion('dashboard')" class="nav-item active">🏠 Inicio</a>
+            <a id="nav-resumen" onclick="mostrarSeccion('resumen')" class="nav-item">📊 Resumen General</a>
+            <a id="nav-clientes" onclick="mostrarSeccion('clientes')" class="nav-item">👥 Clientes</a>
+            <a id="nav-predicciones" onclick="mostrarSeccion('predicciones')" class="nav-item">📈 Predicciones</a>
+            <a id="nav-config" onclick="mostrarSeccion('configuracion')" class="nav-item">⚙️ Configuración</a>
+        </nav>
+        <div class="sidebar-footer">
+            <button class="logout-btn-sidebar" onclick="logout()">Cerrar Sesión</button>
+        </div>
+    </aside>
+
+    <main class="main-content">
+        <div id="section-bienvenida" class="content-section">
+            <header class="main-header">
+                <div>
+                    <h1>¡Bienvenido a KRIPTON!</h1>
+                    <p class="text-muted" id="userGreeting">Cargando usuario...</p>
+                </div>
+            </header>
+            <div class="welcome-container" style="text-align: center; margin-top: 50px;">
+                <img src="/img/logo-kripton.jpeg" alt="Logo Grande" style="width: 200px; border-radius: 20px; margin-bottom: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.5);">
+                <h2>Selecciona una opción en el menú lateral para comenzar el análisis.</h2>
+            </div>
+        </div>
+
+        <div id="section-resumen" class="content-section" style="display: none;">
+            <header class="main-header">
+                <h1>Centro de Control Kripton</h1>
+                <p class="text-muted">Análisis descriptivo de la cartera actual</p>
+            </header>
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <span class="stat-icon">👥</span>
+                    <div class="stat-info"><label>Total Clientes</label><h2 id="stat-total">--</h2></div>
+                </div>
+                <div class="stat-card warning">
+                    <span class="stat-icon">⚠️</span>
+                    <div class="stat-info"><label>En Riesgo Alto (Churn)</label><h2 id="stat-riesgo">--</h2></div>
+                </div>
+                <div class="stat-card info">
+                    <span class="stat-icon">📅</span>
+                    <div class="stat-info"><label>Inactividad Media</label><h2 id="stat-inactivo">--</h2></div>
+                </div>
+            </div>
+            <div class="dashboard-visuals">
+                <div class="visual-box">
+                    <h3>Distribución de Riesgo Global</h3>
+                    <div class="progress-container">
+                        <div class="progress-labels"><span>Clientes Estables vs. Riesgo</span><span id="label-porcentaje">0%</span></div>
+                        <div class="progress-bar-bg"><div id="bar-riesgo" class="progress-bar-fill" style="width: 0%"></div></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="section-clientes" class="content-section" style="display: none;">
+            <header class="main-header">
+                <h1>Gestión de Cartera</h1>
+                <p class="text-muted">Filtrado avanzado y segmentación de clientes</p>
+            </header>
+
+            <div class="filter-shell">
+                <div class="filter-grid-pro">
+                    <div class="filter-group-pro">
+                        <label><i class="fas fa-search"></i> Identificador o Edad</label>
+                        <input type="text" id="inputBusqueda" onkeyup="filtrarGeneral()" placeholder="Ej: 8805...">
+                    </div>
+
+                    <div class="filter-group-pro">
+                        <label>Género</label>
+                        <select id="filterGender" onchange="filtrarGeneral()">
+                            <option value="todos">Todos los géneros</option>
+                            <option value="1">Hombre</option>
+                            <option value="0">Mujer</option>
+                        </select>
+                    </div>
+
+                    <div class="filter-group-pro">
+                        <label>Nivel de Riesgo</label>
+                        <select id="filterRisk" onchange="filtrarGeneral()">
+                            <option value="todos">Cualquier estado</option>
+                            <option value="1">En Riesgo (Churn)</option>
+                            <option value="0">Estable (Leal)</option>
+                        </select>
+                    </div>
+
+                    <div class="filter-group-pro">
+                        <label>Meses de Inactividad</label>
+                        <input type="number" id="filterInactive" onkeyup="filtrarGeneral()" placeholder="Mínimo de meses...">
+                    </div>
+                </div>
+                <div class="filter-actions">
+                    <button class="btn-clear-pro" onclick="limpiarFiltros()">
+                        <span>🧹 Limpiar Filtros</span>
+                    </button>
+                </div>
+            </div>
+
+            <div class="table-container-pro">
+                <div id="listaClientes"></div>
+            </div>
+        </div>
+        <div id="section-predicciones" class="content-section" style="display: none;">
+
+            <div class="main-header">
+                <h1>Centro de Control de Riesgo</h1>
+                <p class="text-muted">Monitoreo y predicción de retención de clientes en tiempo real</p>
+            </div>
+
+            <div class="kpi-grid">
+                <div class="kpi-card">
+                    <div class="kpi-title">Tasa de Fuga Actual</div>
+                    <div class="kpi-value" id="kpi-churn-rate">--%</div>
+                    <div class="kpi-trend bad">📈 +2.4% vs mes anterior</div>
+                </div>
+
+                <div class="kpi-card warning-glow">
+                    <div class="kpi-title">Clientes Perdidos/Riesgo</div>
+                    <div class="kpi-value" id="kpi-risk-count">--</div>
+                    <div class="kpi-icon">⚠️</div>
+                </div>
+
+                <div class="kpi-card">
+                    <div class="kpi-title">Tasa de Retención</div>
+                    <div class="kpi-value" id="kpi-retention">--%</div>
+                    <div class="kpi-trend good">🚀 Estable</div>
+                </div>
+
+                <div class="kpi-card">
+                    <div class="kpi-title">Impacto Financiero Est.</div>
+                    <div class="kpi-value" id="kpi-impact">$--</div>
+                    <div class="kpi-sub">Basado en LTV promedio</div>
+                </div>
+            </div>
+
+            <div class="charts-row-pro">
+
+                <div class="chart-card-pro big-chart">
+                    <div class="chart-header">
+                        <h3>Tendencia Mensual de Fuga</h3>
+                        <span class="badge-tag">Últimos 6 meses</span>
+                    </div>
+                    <div class="chart-body">
+                        <canvas id="chartTendencia"></canvas>
+                    </div>
+                </div>
+
+                <div class="chart-card-pro small-chart">
+                    <div class="chart-header">
+                        <h3>Distribución de Riesgo</h3>
+                    </div>
+                    <div class="chart-body">
+                        <canvas id="chartDistribucion"></canvas>
+                    </div>
+                    <div class="chart-legend-custom">
+                        <div class="legend-item"><span class="dot green"></span>Activos</div>
+                        <div class="legend-item"><span class="dot red"></span>Fuga Confirmada</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="prediction-card-main" style="margin-top: 30px;">
+                <h3>🔮 Consultar Cliente Específico (IA en Vivo)</h3>
+                <p class="text-muted">Introduce el ID del cliente para calcular su probabilidad futura.</p>
+
+                <div class="search-ia-box">
+                    <input type="number" id="inputPredictId" placeholder="Ej: 8805 (ID Cliente)">
+                    <button class="btn-primary-glow" onclick="ejecutarPrediccionIndividual()">
+                        ✨ Analizar con IA
+                    </button>
+                </div>
+                <div id="resultadoIA" class="ia-result-container"></div>
+            </div>
+        </div>
+
+        <div id="section-configuracion" class="content-section" style="display: none;">
+            <div class="config-wrapper">
+                <div class="config-card">
+                    <div class="icon-circle">⚙️</div>
+                    <h1>Configuración</h1>
+                    <p class="text-muted">Actualiza tus credenciales</p>
+
+                    <div class="config-form" style="margin-top: 20px;">
+                        <div class="input-group">
+                            <label>Nuevo Nombre de Usuario</label>
+                            <input type="text" id="configUser" placeholder="Escribe el nombre...">
+                        </div>
+                        <div class="input-group">
+                            <label>Nueva Contraseña</label>
+                            <input type="password" id="configPass" placeholder="Mínimo 8 caracteres...">
+                        </div>
+                        <button type="button" class="btn-update" onclick="guardarConfiguracion()">
+                            Actualizar Perfil
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+</div>
+
+<div id="modalDetalles" class="modal-overlay">
+    <div class="modal-content">
+        <span class="modal-close" onclick="cerrarModalDetalles()">&times;</span>
+        <h2>Expediente del Cliente</h2>
+        <div id="modalBody" class="details-grid">
+        </div>
+    </div>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<script src="js/dashboard.js"></script>
+</body>
+</html>

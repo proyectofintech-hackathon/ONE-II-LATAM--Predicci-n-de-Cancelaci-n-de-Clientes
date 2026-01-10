@@ -12,12 +12,12 @@ import java.util.List;
 public class PrediccionService {
 
     private final PrediccionRepository prediccionRepository;
-
+    //metodo para guardar una prediccion
     @Transactional
     public PrediccionChurn guardarPrediccion(PrediccionChurn prediccion) {
         return prediccionRepository.save(prediccion);
     }
-
+    //metodo para obtener predicciones por cliente
     public List<PrediccionChurn> obtenerPrediccionesPorCliente(Integer clienteId) {
         return prediccionRepository.findByClienteId(clienteId);
     }

@@ -12,21 +12,21 @@ import java.util.Optional;// Para el metido para buscar por ID
 @RequiredArgsConstructor
 public class ClienteService {
     private final ClienteRepository clienteRepository;
-
+    //metodo para guardar un cliente
     @Transactional
     public Cliente guardarCliente(Cliente cliente) {
         return clienteRepository.save(cliente);
     }
-
+    //metodo para listar todos los clientes
     public List<Cliente> listarClientes() {
         return clienteRepository.findAll();
     }
 
-    // Cambiamos Long a Integer
+    // Metodo para buscar por ID
     public Optional<Cliente> buscarPorId(Integer id) {
         return clienteRepository.findById(id);
     }
-
+    //metodo para convertir DTO a entidad dominio
     public Cliente convertirADominio(ClienteDTO dto) {
         Cliente cliente = new Cliente();
     // Actualizacion de los atributos de acuerdo a la bd de el equipo de data science

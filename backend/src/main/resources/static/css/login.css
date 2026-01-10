@@ -1,0 +1,47 @@
+/* login.css */
+body {
+    background-color: #0b1120;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+.login-card {
+    background-color: #161d2f;
+    border: 1px solid #2d3748;
+    border-radius: 15px;
+    padding: 45px; /* Más espacio interno */
+    width: 100%;
+    max-width: 420px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.6);
+}
+
+/* Logo más grande y llamativo */
+.logo-kripton {
+    height: 120px; /* Aumentamos el tamaño */
+    margin-bottom: 25px;
+    filter: drop-shadow(0 0 10px rgba(59, 130, 246, 0.5)); /* Resplandor azul */
+    transition: transform 0.3s ease;
+}
+
+.logo-kripton:hover {
+    transform: scale(1.05); /* Efecto al pasar el mouse */
+}
+
+.form-control {
+    background-color: #1f2937;
+    border: 1px solid #374151;
+    color: white;
+    padding: 12px;
+}
+
+.btn-kripton {
+    background-color: #2563eb;
+    color: white;
+    font-weight: bold;
+    padding: 12px;
+    border: none;
+    margin-top: 10px;
+}

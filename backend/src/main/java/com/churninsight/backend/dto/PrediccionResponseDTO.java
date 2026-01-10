@@ -9,5 +9,5 @@ import java.math.BigDecimal;
 public class PrediccionResponseDTO {
     private String prevision;
     private BigDecimal probabilidad;
-    private Integer clienteId; // Cambiado a Integer para coincidir con el ID del Cliente
+    private Integer clienteId;
 }
