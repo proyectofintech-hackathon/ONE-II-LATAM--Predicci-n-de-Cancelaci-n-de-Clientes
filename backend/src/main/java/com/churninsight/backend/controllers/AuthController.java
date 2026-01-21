@@ -6,8 +6,8 @@ import com.churninsight.backend.security.JwtUtil;
 import com.churninsight.backend.services.AuthService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
-import org.springframework.security.core.Authentication; // IMPORTANTE
-import org.springframework.security.crypto.password.PasswordEncoder; // IMPORTANTE
+import org.springframework.security.core.Authentication; // IMPORTANTE PARA OBTENER EL USUARIO AUTENTICADO
+import org.springframework.security.crypto.password.PasswordEncoder; // IMPORTANTE PARA ENCRIPTAR
 import org.springframework.web.bind.annotation.*;
 
 import java.util.Map;
@@ -38,7 +38,44 @@ public class AuthController {
             return ResponseEntity.status(401).body(Map.of("error", "Usuario o contraseña incorrectos"));
         }
     }
+    // --- ruta para el reGISTRO ---
 
+    @PostMapping("/register")
+    public ResponseEntity<?> registrarUsuario(@RequestBody Map<String, String> datos) {
+        String username = datos.get("username");
+        String password = datos.get("password");
+        String roleStr = datos.get("role"); // Recibimos el string del rol (ej: "ADMIN")
+
+        if (username == null || password == null || username.isEmpty() || password.isEmpty()) {
+            return ResponseEntity.badRequest().body(Map.of("error", "Usuario y contraseña son obligatorios"));
+        }
+
+        if (usuarioRepository.findByUsername(username).isPresent()) {
+            return ResponseEntity.badRequest().body(Map.of("error", "El nombre de usuario ya existe"));
+        }
+
+        Usuario nuevoUsuario = new Usuario();
+        nuevoUsuario.setUsername(username);
+        nuevoUsuario.setPassword(passwordEncoder.encode(password));
+
+        // ---  Asignar el Rol ---
+        try {
+            if (roleStr != null && !roleStr.isEmpty()) {
+                // Convertimos el String del frontend al Enum (ADMIN o CONSULTOR)
+                nuevoUsuario.setRol(com.churninsight.backend.enums.Rol.valueOf(roleStr.toUpperCase()));
+            } else {
+                // Rol por defecto si el usuario no elige
+                nuevoUsuario.setRol(com.churninsight.backend.enums.Rol.CONSULTOR);
+            }
+        } catch (IllegalArgumentException e) {
+            // Si mandan un texto que no existe en el Enum, ponemos CONSULTOR
+            nuevoUsuario.setRol(com.churninsight.backend.enums.Rol.CONSULTOR);
+        }
+
+        usuarioRepository.save(nuevoUsuario);
+
+        return ResponseEntity.ok(Map.of("message", "Usuario registrado exitosamente"));
+    }
     // Cambié la ruta a /actualizar ya que el prefijo del controlador es /api/auth
     // Por lo tanto, la URL final será: PUT /api/auth/actualizar
     @PutMapping("/actualizar")

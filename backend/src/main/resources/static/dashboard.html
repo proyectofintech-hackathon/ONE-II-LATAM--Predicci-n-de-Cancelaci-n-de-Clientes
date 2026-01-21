@@ -5,23 +5,34 @@
     <title>Dashboard - KRIPTON</title>
     <link rel="stylesheet" href="css/dashboard.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body>
 <div class="app-container">
     <aside class="sidebar">
         <div class="sidebar-header">
-            <img src="/img/logo-kripton.jpeg" alt="Logo" class="mini-big">
-            <span>KRIPTON</span>
+            <img src="/img/logo-kripton.png" alt="Logo" class="mini-big">
+            <!--<span>KRIPTON</span>-->
         </div>
         <nav class="sidebar-nav">
             <a id="nav-dashboard" onclick="mostrarSeccion('dashboard')" class="nav-item active">🏠 Inicio</a>
             <a id="nav-resumen" onclick="mostrarSeccion('resumen')" class="nav-item">📊 Resumen General</a>
             <a id="nav-clientes" onclick="mostrarSeccion('clientes')" class="nav-item">👥 Clientes</a>
+            <a id="nav-registro" onclick="mostrarSeccion('registro')" class="nav-item">➕ Nuevo Cliente</a>
             <a id="nav-predicciones" onclick="mostrarSeccion('predicciones')" class="nav-item">📈 Predicciones</a>
             <a id="nav-config" onclick="mostrarSeccion('configuracion')" class="nav-item">⚙️ Configuración</a>
+            <div class="nav-item" id="nav-plan-accion" onclick="mostrarSeccion('plan-accion')">
+                <i class="fas fa-hand-holding-heart"></i> Plan de Acción
+            </div>
         </nav>
         <div class="sidebar-footer">
+            <div class="theme-switch-wrapper">
+                <button id="btn-theme-toggle" class="btn-theme" onclick="toggleTheme()">
+                    ☀️
+                </button>
+                <span class="text-muted" style="font-size: 12px;">Cambiar Tema</span>
+            </div>
             <button class="logout-btn-sidebar" onclick="logout()">Cerrar Sesión</button>
         </div>
     </aside>
@@ -30,12 +41,12 @@
         <div id="section-bienvenida" class="content-section">
             <header class="main-header">
                 <div>
-                    <h1>¡Bienvenido a KRIPTON!</h1>
+                    <h1>¡Bienvenido a KRYPTON!</h1>
                     <p class="text-muted" id="userGreeting">Cargando usuario...</p>
                 </div>
             </header>
             <div class="welcome-container" style="text-align: center; margin-top: 50px;">
-                <img src="/img/logo-kripton.jpeg" alt="Logo Grande" style="width: 200px; border-radius: 20px; margin-bottom: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.5);">
+                <img src="/img/logo-kripton.png" alt="Logo Grande" style="width: 200px; border-radius: 20px; margin-bottom: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.5);">
                 <h2>Selecciona una opción en el menú lateral para comenzar el análisis.</h2>
             </div>
         </div>
@@ -45,27 +56,36 @@
                 <h1>Centro de Control Kripton</h1>
                 <p class="text-muted">Análisis descriptivo de la cartera actual</p>
             </header>
+
             <div class="stats-grid">
                 <div class="stat-card">
                     <span class="stat-icon">👥</span>
-                    <div class="stat-info"><label>Total Clientes</label><h2 id="stat-total">--</h2></div>
+                    <div class="stat-info"><label>Total Clientes</label><h2 id="stat-total">10127</h2></div>
                 </div>
                 <div class="stat-card warning">
                     <span class="stat-icon">⚠️</span>
-                    <div class="stat-info"><label>En Riesgo Alto (Churn)</label><h2 id="stat-riesgo">--</h2></div>
+                    <div class="stat-info"><label>En Riesgo Alto (Churn)</label><h2 id="stat-riesgo">1627</h2></div>
                 </div>
                 <div class="stat-card info">
                     <span class="stat-icon">📅</span>
-                    <div class="stat-info"><label>Inactividad Media</label><h2 id="stat-inactivo">--</h2></div>
+                    <div class="stat-info"><label>Inactividad Media</label><h2 id="stat-inactivo">2.3 meses</h2></div>
                 </div>
             </div>
-            <div class="dashboard-visuals">
-                <div class="visual-box">
-                    <h3>Distribución de Riesgo Global</h3>
-                    <div class="progress-container">
-                        <div class="progress-labels"><span>Clientes Estables vs. Riesgo</span><span id="label-porcentaje">0%</span></div>
-                        <div class="progress-bar-bg"><div id="bar-riesgo" class="progress-bar-fill" style="width: 0%"></div></div>
-                    </div>
+
+            <div class="charts-dashboard-row">
+                <div class="chart-main-container">
+                    <h3>👥 Distribución por Rangos de Edad</h3>
+                    <canvas id="chartBarrasEdad"></canvas>
+                </div>
+
+                <div class="chart-main-container">
+                    <h3>📈 Tipos de Tarjetas Activas</h3>
+                    <canvas id="chartBarrasTarjetas"></canvas>
+                </div>
+
+                <div class="chart-main-container">
+                    <h3>📉 Tendencia de Inactividad</h3>
+                    <canvas id="chartLineaInactividad"></canvas>
                 </div>
             </div>
         </div>
@@ -95,9 +115,10 @@
                     <div class="filter-group-pro">
                         <label>Nivel de Riesgo</label>
                         <select id="filterRisk" onchange="filtrarGeneral()">
-                            <option value="todos">Cualquier estado</option>
-                            <option value="1">En Riesgo (Churn)</option>
-                            <option value="0">Estable (Leal)</option>
+                            <option value="todos">Todos los niveles</option>
+                            <option value="alto">Riesgo Alto</option>
+                            <option value="medio">Riesgo Medio (Alerta)</option>
+                            <option value="bajo">Fiel (Riesgo Bajo)</option>
                         </select>
                     </div>
 
@@ -115,6 +136,7 @@
 
             <div class="table-container-pro">
                 <div id="listaClientes"></div>
+                <div id="paginacionControles" class="pagination-container"></div>
             </div>
         </div>
         <div id="section-predicciones" class="content-section" style="display: none;">
@@ -213,7 +235,123 @@
                 </div>
             </div>
         </div>
+        <div id="section-registro" class="content-section" style="display: none;">
+            <div class="registration-wrapper">
+                <div class="registration-card">
+                    <div class="icon-circle" style="margin: 0 auto 20px; background: rgba(0,210,255,0.1); width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.5rem;">👤</div>
+                    <h1>Alta de Nuevo Cliente</h1>
+                    <p class="text-muted" style="text-align: center;">Completa todos los campos para evitar datos nulos en el análisis.</p>
+
+                    <form id="formRegistroCliente" onsubmit="event.preventDefault(); procesarAltaCliente();">
+                        <div class="form-grid-2">
+                            <div class="input-group-pro">
+                                <label>Edad</label>
+                                <input type="number" id="regEdad" placeholder="Ej: 45" required>
+                            </div>
+                            <div class="input-group-pro">
+                                <label>Género</label>
+                                <select id="regGenero">
+                                    <option value="1">Masculino</option>
+                                    <option value="0">Femenino</option>
+                                </select>
+                            </div>
+                            <div class="input-group-pro">
+                                <label>Meses Inactivo</label>
+                                <input type="number" id="regInactivo" placeholder="0 - 12" required>
+                            </div>
+                            <div class="input-group-pro">
+                                <label>Contactos (12 meses)</label>
+                                <input type="number" id="regContactos" placeholder="Cant. contactos" required>
+                            </div>
+                            <div class="input-group-pro">
+                                <label>Tipo de Tarjeta</label>
+                                <select id="regTarjeta">
+                                    <option value="blue">Blue (Estándar)</option>
+                                    <option value="silver">Silver</option>
+                                    <option value="gold">Gold</option>
+                                    <option value="platinum">Platinum</option>
+                                </select>
+                            </div>
+                            <div class="input-group-pro">
+                                <label>Productos con baja relación</label>
+                                <input type="number" id="regLowRel" placeholder="Ej: 1" required>
+                            </div>
+                            <div class="input-group-pro">
+                                <label>Ratio de Uso (0.0 a 1.0)</label>
+                                <input type="number" step="0.01" id="regUso" placeholder="Ej: 0.15" required>
+                            </div>
+                            <div class="input-group-pro">
+                                <label>Cambio Transaccional (Q4 vs Q1)</label>
+                                <input type="number" step="0.001" id="regCambio" placeholder="Ej: 1.25" required>
+                            </div>
+
+                            <button type="submit" class="btn-save-client">
+                                💾 REGISTRAR EN BASE DE DATOS Y ANALIZAR
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div id="section-plan-accion" class="content-section" style="display: none;">
+            <div class="main-header">
+                <h1>Análisis Detallado de Retención</h1>
+                <p class="text-muted">Desglose de motivos detectados por Champion 3 y hoja de ruta.</p>
+            </div>
+
+            <div class="action-detail-container">
+                <div class="client-info-banner" id="plan-client-header">
+                </div>
+
+                <div class="detail-grid">
+                    <div class="detail-card">
+                        <h3>🔍 ¿Por qué se quiere ir?</h3>
+                        <div id="plan-motivos-lista" class="motivos-fuga-box">
+                        </div>
+                    </div>
+
+                    <div class="detail-card">
+                        <h3>🛠️ Acciones Recomendadas</h3>
+                        <div id="plan-acciones-especificas" class="acciones-box">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <footer class="krypton-footer">
+            <div class="footer-container">
+                <div class="footer-grid">
+                    <div class="footer-column">
+                        <h6 class="footer-title">Síguenos</h6>
+                        <div class="footer-socials">
+                            <a href="https://www.facebook.com/profile.php?id=61586669641962" target="_blank"><i class="fa-brands fa-facebook"></i></a>
+                            <a href="https://www.linkedin.com/in/krypton-fintech-4967143a6/" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
+                            <a href="https://x.com/KryptonFintech" target="_blank"><i class="fa-brands fa-x-twitter"></i></a>
+                            <a href="https://www.instagram.com/krypton.fintech/" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+                            <a href="https://youtube.com/@krypton-fintech?si=s2ggf0rV7Vi-TQx6" target="_blank"><i class="fa-brands fa-youtube"></i></a>
+                        </div>
+                    </div>
+
+                    <div class="footer-column">
+                        <h6 class="footer-title">Nuestro Equipo</h6>
+                        <p class="footer-text">
+                            <a href="nosotros.html" class="team-badge" style="text-decoration: none;">
+                                Ver Equipo 02 - H12 <i class="fas fa-external-link-alt"></i>
+                            </a>
+                        </p>
+                    </div>
+
+                    <div class="footer-column">
+                        <a href="valores.html" style="text-decoration: none; color: inherit;">
+                            <h6 class="footer-title">Cultura <i class="fas fa-chevron-right"></i></h6>
+                            <p class="footer-text">Misión, Visión y Valores.</p>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </footer>
     </main>
+
 </div>
 
 <div id="modalDetalles" class="modal-overlay">

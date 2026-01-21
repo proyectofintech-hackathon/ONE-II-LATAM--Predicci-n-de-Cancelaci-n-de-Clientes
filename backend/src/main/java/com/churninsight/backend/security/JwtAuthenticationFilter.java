@@ -28,24 +28,31 @@ public class JwtAuthenticationFilter extends OncePerRequestFilter {
 
         // 1. Extraer el encabezado "Authorization"
         String authHeader = request.getHeader("Authorization");
-
+        // Comprobar que el encabezado contiene un token Bearer
         if (authHeader != null && authHeader.startsWith("Bearer ")) {
-            String token = authHeader.substring(7); // Quitar "Bearer " para tener solo el código
-            String username = jwtUtil.extraerUsername(token);
-
             // 2. Si hay usuario y no está ya autenticado en esta petición
-            if (username != null && SecurityContextHolder.getContext().getAuthentication() == null) {
+            // Cambia esta parte en JwtAuthenticationFilter.java
+            try {
+                String token = authHeader.substring(7);
+                String username = jwtUtil.extraerUsername(token);
+                // SI hay un usuario y no está ya autenticado
+                if (username != null && SecurityContextHolder.getContext().getAuthentication() == null) {
 
-                // 3. Crear la autenticación para Spring
-                UsernamePasswordAuthenticationToken authToken = new UsernamePasswordAuthenticationToken(
-                        username, null, new ArrayList<>()
-                );
+                    // 3. Crear la autenticación para Spring
+                    UsernamePasswordAuthenticationToken authToken = new UsernamePasswordAuthenticationToken(
+                            username, null, new ArrayList<>()
+                    );
+                    // Detalles adicionales de la petición
+                    authToken.setDetails(new WebAuthenticationDetailsSource().buildDetails(request));
 
-                authToken.setDetails(new WebAuthenticationDetailsSource().buildDetails(request));
-
-                // 4. "Abrir la puerta": Guardar la autenticación en el contexto
-                SecurityContextHolder.getContext().setAuthentication(authToken);
+                    // 4. "Abrir la puerta": Guardar la autenticación en el contexto
+                    SecurityContextHolder.getContext().setAuthentication(authToken);
+                }
+            } catch (Exception e) {
+                // Si el token falla, simplemente no autenticamos, no lanzamos error 500
+                System.out.println("Error validando JWT: " + e.getMessage());
             }
+
         }
 
         // 5. Continuar con la petición

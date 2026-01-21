@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Cargando | Kripton</title>
+    <style>
+        body {
+            background: #020617; /* Tu color oscuro de fondo */
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            font-family: 'Inter', sans-serif;
+            margin: 0;
+            overflow: hidden;
+        }
+        .loader-container {
+            text-align: center;
+        }
+        .loader-logo {
+            width: 140px;
+            /* Aplicamos las animaciones de tu compañera */
+            animation: rotate 6s linear infinite, pulse 2.5s ease-in-out infinite;
+            filter: drop-shadow(0 0 12px rgba(245, 199, 122, 0.4));
+            border-radius: 50%; /* Por si tu logo es cuadrado */
+        }
+        .loader-container p {
+            color: #f5c77a; /* Tu dorado */
+            font-size: 13px;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            margin-top: 20px;
+            opacity: 0.8;
+        }
+        @keyframes rotate { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
+        @keyframes pulse { 0%, 100% { transform: scale(1); opacity: 0.9; } 50% { transform: scale(1.05); opacity: 1; } }
+    </style>
+</head>
+<body>
+<div class="loader-container">
+    <img src="/img/logo-kripton.png" alt="Kripton Loader" class="loader-logo">
+    <p>Iniciando Sistemas...</p>
+</div>
+
+<script>
+    // Redirigir al dashboard tras 2.5 segundos
+    setTimeout(() => {
+        window.location.href = 'dashboard.html';
+    }, 2500);
+</script>
+</body>
+</html>

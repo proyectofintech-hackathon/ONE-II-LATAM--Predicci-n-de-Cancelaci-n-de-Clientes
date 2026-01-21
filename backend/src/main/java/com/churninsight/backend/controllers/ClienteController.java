@@ -44,7 +44,7 @@ public class ClienteController {
 
             // 2. Preparamos la llamada a Python (Flask)
             RestTemplate restTemplate = new RestTemplate();
-            String pythonUrl = "http://localhost:5000/predict";
+            String pythonUrl = "http://ia-service:5000/predict";// Ruta del microservicio Python
 
             // Creamos el JSON que espera Python con los nombres exactos
             Map<String, Object> requestParaPython = Map.of(
@@ -69,4 +69,6 @@ public class ClienteController {
         //Por si no se encuentra el cliente
         }).orElse(ResponseEntity.notFound().build());
     }
+
+
 }

@@ -17,7 +17,7 @@ document.getElementById('loginForm').addEventListener('submit', async (e) => {
             // Guardamos el token que viene en el JSON
             sessionStorage.setItem('token', data.token);
             console.log("Login exitoso, redirigiendo...");
-            window.location.href = 'dashboard.html';
+            window.location.href = 'loading.html';
         } else {
             alert('Error: ' + (data.message || 'Usuario o contraseña incorrectos'));
         }

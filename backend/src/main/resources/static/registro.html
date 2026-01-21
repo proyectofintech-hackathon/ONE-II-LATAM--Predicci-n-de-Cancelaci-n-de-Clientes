@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Krypton | Registro</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/auth.css">
+</head>
+<body>
+
+<div class="auth-card">
+    <div class="auth-header">
+        <h1>Crear Cuenta</h1>
+        <p>Únete a Krypton y predice el futuro</p>
+    </div>
+
+    <form id="registroForm">
+        <div class="input-group">
+            <label for="username">Usuario</label>
+            <input type="text" id="username" name="username" placeholder="Elige tu usuario" required>
+        </div>
+
+        <div class="input-group">
+            <label for="password">Contraseña</label>
+            <input type="password" id="password" name="password" placeholder="Crea una contraseña segura" required>
+        </div>
+
+        <div class="input-group">
+            <label for="role">Tipo de Acceso</label>
+            <select id="role" name="role" class="form-select-krypton">
+                <option value="CONSULTOR">Consultor (Estándar)</option>
+                <option value="ADMIN">Administrador (Total)</option>
+            </select>
+        </div>
+
+        <button type="submit" class="btn-auth">Registrarse</button>
+    </form>
+
+    <div id="mensaje"></div>
+
+    <div class="auth-footer">
+        ¿Ya tienes cuenta? <a href="login.html">Inicia Sesión aquí</a>
+    </div>
+</div>
+<!--Agrega el script para manejar el registro-->
+<script>
+    document.getElementById('registroForm').addEventListener('submit', async function(e) {
+        e.preventDefault();
+
+        const username = document.getElementById('username').value;
+        const password = document.getElementById('password').value;
+        const role = document.getElementById('role').value;
+        const mensajeDiv = document.getElementById('mensaje');
+
+        mensajeDiv.textContent = "Procesando...";
+        mensajeDiv.className = "";
+
+        try {
+            // AJUSTA EL PUERTO SI TU BACKEND NO ESTÁ EN 8080
+            const response = await fetch('http://localhost:8080/api/auth/register', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({
+                username: username,
+                password: password,
+                role: role // Lo enviamos al backend
+        })
+            });
+
+            const data = await response.json();
+
+            if (response.ok) {
+                mensajeDiv.textContent = "¡Cuenta creada! Redirigiendo al login...";
+                mensajeDiv.className = "success";
+                setTimeout(() => {
+                    window.location.href = 'login.html';
+                }, 2000);
+            } else {
+                mensajeDiv.textContent = data.error || "Error al registrar";
+                mensajeDiv.className = "error";
+            }
+        } catch (error) {
+            console.error(error);
+            mensajeDiv.textContent = "Error de conexión con el servidor";
+            mensajeDiv.className = "error";
+        }
+    });
+</script>
+
+</body>
+</html>

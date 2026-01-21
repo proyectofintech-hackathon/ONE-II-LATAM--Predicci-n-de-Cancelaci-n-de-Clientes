@@ -1,0 +1,162 @@
+/* css/auth.css */
+:root {
+    --gold: #f5c77a;
+    --gold-glow: rgba(245, 199, 122, 0.4);
+    --bg-main: #0f172a;
+    --card-bg: linear-gradient(145deg, #1e293b, #0f172a);
+    --text: #f8fafc;
+    --primary: #00d2ff;
+}
+
+body {
+    background-color: var(--bg-main);
+    background-image: radial-gradient(circle at center, rgba(245, 199, 122, 0.08), transparent 70%);
+    font-family: 'Inter', sans-serif;
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    color: var(--text);
+}
+
+/* Contenedor de la tarjeta (Login/Registro) */
+.auth-card {
+    background: var(--card-bg);
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.5);
+    width: 100%;
+    max-width: 400px;
+    text-align: center;
+    position: relative;
+    border: 1px solid rgba(245, 199, 122, 0.2);
+    overflow: hidden;
+}
+
+/* Efecto de brillo (La lucecita que pasa) */
+.auth-card::after {
+    content: "";
+    position: absolute;
+    top: 0; left: -100%; width: 50%; height: 100%;
+    background: linear-gradient(to right, transparent 0%, rgba(245, 199, 122, 0.1) 50%, transparent 100%);
+    transform: skewX(-25deg);
+    animation: shine 6s infinite ease-in-out;
+    pointer-events: none;
+}
+
+@keyframes shine {
+    0% { left: -100%; opacity: 0; }
+    20% { opacity: 1; }
+    100% { left: 200%; opacity: 0; }
+}
+
+.auth-header h1 {
+    color: var(--gold);
+    margin: 0 0 10px 0;
+    font-size: 1.8rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.auth-header p {
+    color: #94a3b8;
+    margin-bottom: 30px;
+    font-size: 0.9rem;
+}
+
+.input-group {
+    text-align: left;
+    margin-bottom: 20px;
+}
+
+.input-group label {
+    display: block;
+    color: var(--gold);
+    font-size: 0.75rem;
+    font-weight: bold;
+    margin-bottom: 8px;
+    text-transform: uppercase;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 14px;
+    background: rgba(15, 23, 42, 0.8);
+    border: 1px solid #334155;
+    border-radius: 10px;
+    color: white;
+    font-size: 1rem;
+    box-sizing: border-box; /* Importante para que no se salga */
+    transition: 0.3s;
+}
+
+.input-group input:focus {
+    outline: none;
+    border-color: var(--gold);
+    box-shadow: 0 0 15px rgba(245, 199, 122, 0.2);
+}
+
+.btn-auth {
+    width: 100%;
+    padding: 15px;
+    background: linear-gradient(90deg, #f5c77a, #d4a048);
+    color: #0b1120;
+    border: none;
+    border-radius: 10px;
+    font-weight: bold;
+    font-size: 1rem;
+    cursor: pointer;
+    margin-top: 10px;
+    text-transform: uppercase;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.btn-auth:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 20px rgba(245, 199, 122, 0.3);
+}
+
+.auth-footer {
+    margin-top: 20px;
+    font-size: 0.85rem;
+    color: #94a3b8;
+}
+
+.auth-footer a {
+    color: var(--primary);
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.auth-footer a:hover {
+    text-decoration: underline;
+}
+
+/* Mensaje de error/éxito */
+#mensaje {
+    margin-top: 15px;
+    font-size: 0.9rem;
+    min-height: 20px;
+}
+.error { color: #ef4444; }
+.success { color: #10b981; }
+
+.form-select-krypton {
+    width: 100%;
+    padding: 14px;
+    background: rgba(15, 23, 42, 0.8);
+    border: 1px solid #334155;
+    border-radius: 10px;
+    color: white;
+    font-size: 1rem; /* Tamaño de fuente consistente */
+    box-sizing: border-box; /* Importante para que no se salga */
+    appearance: none; /* Quita la flecha por defecto en algunos navegadores */
+    cursor: pointer;
+}
+
+.form-select-krypton option {
+    background: var(--bg-main);
+    color: white;
+}

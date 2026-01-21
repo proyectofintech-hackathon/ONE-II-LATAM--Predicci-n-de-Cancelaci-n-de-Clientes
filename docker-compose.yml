@@ -1,0 +1,40 @@
+services:
+  # 1. Base de Datos (PostgreSQL 14)
+  db:
+    image: postgres:14  # <--- Ajustado a tu versión preferida
+    container_name: churn_db_container
+    environment:
+      POSTGRES_DB: churn_db
+      POSTGRES_USER: ${DB_USER}
+      # Usa la variable de entorno de tu PC o escribe la clave aquí si es prueba local
+      POSTGRES_PASSWORD: ${DB_PASSWORD}
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+  # 2. Microservicio IA (Python)
+  ia-service:
+    build: ./microservicio-python  # <--- Asegúrate que tu carpeta se llame así
+    container_name: ia_service
+    ports:
+      - "5000:5000"
+
+  # 3. Backend (Java Spring Boot 21)
+  backend:
+    build: ./backend  # <--- Asegúrate que tu carpeta se llame así
+    container_name: java_backend
+    depends_on:
+      - db
+      - ia-service
+    ports:
+      - "8080:8080"
+    environment:
+      # Conexión a la BD usando el nombre del servicio "db"
+      SPRING_DATASOURCE_URL: jdbc:postgresql://db:5432/churn_db
+      SPRING_DATASOURCE_USERNAME: ${DB_USER}
+      SPRING_DATASOURCE_PASSWORD: ${DB_PASSWORD}
+      # Si tu Java llama a Python, usa esta URL interna: http://ia-service:5000/predict
+
+volumes:
+  postgres_data:

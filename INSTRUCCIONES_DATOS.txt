@@ -1,0 +1,24 @@
+===========================================================
+GUÍA DE CARGA DE DATOS - PROYECTO CHURN
+===========================================================
+
+Para que la aplicación muestre los 10,127 clientes, sigue estos pasos
+una vez que tengas Docker corriendo:
+
+1. COPIAR EL ARCHIVO AL CONTENEDOR:
+   Abre una terminal en la raíz del proyecto y ejecuta:
+   docker cp datos_limpios.txt churn_db_container:/tmp/datos_limpios.txt
+
+2. IMPORTAR LOS DATOS (ORDEN CRÍTICO DE COLUMNAS):
+   Ejecuta el siguiente comando. Este orden es el único que funciona
+   con el formato del TXT y evita errores de sintaxis:
+
+   docker exec -it churn_db_container psql -U postgres -d churn_db -c "\copy clientes(id, attrition_flag, customer_age, months_inactive12mon, contacts_count12mon, total_ct_chngq4q1, avg_utilization_ratio, low_relationship_count, genderm, card_category_gold, card_category_platinum, card_category_silver) FROM '/tmp/datos_limpios.txt' WITH (FORMAT text, DELIMITER E'\t');"
+
+3. VERIFICAR CARGA:
+   Para confirmar que están todos, ejecuta:
+   docker exec -it churn_db_container psql -U postgres -d churn_db -c "SELECT COUNT(*) FROM clientes;"
+
+NOTA: Si da error de "duplicate key", vacía la tabla primero con:
+docker exec -it churn_db_container psql -U postgres -d churn_db -c "TRUNCATE TABLE clientes CASCADE;"
+===========================================================

@@ -10,12 +10,13 @@ import java.util.List;
 
 @RestController
 //direccion base para las predicciones
-@RequestMapping("/api/predicciones")
+@RequestMapping("/api/predicciones")//Ruta base para las predicciones
 @RequiredArgsConstructor
+@CrossOrigin(origins = "*")
 public class PrediccionController {
 
     private final PrediccionService prediccionService;
-
+// Endpoint para guardar una nueva predicción
     @PostMapping("/guardar")
     public ResponseEntity<PrediccionChurn> guardarResultado(@RequestBody PrediccionChurn prediccion) {
         return ResponseEntity.ok(prediccionService.guardarPrediccion(prediccion));
