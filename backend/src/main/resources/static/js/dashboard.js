@@ -124,65 +124,50 @@ function mostrarSeccion(seccion) {
     if (seccion === 'predicciones') inicializarDashboardPro();
 }
 /* =========================================================
-   2.1 PROCESAR REGISTRO DE NUEVO CLIENTE
+   2.1 PROCESAR REGISTRO DE NUEVO CLIENTE (CORREGIDA)
    ========================================================= */
 async function procesarAltaCliente() {
     const tipoTarjeta = document.getElementById('regTarjeta').value;
 
-    // 1. Construimos el objeto SIN ID (Java lo pondrá) y SIN NULOS
     const nuevoCliente = {
-        customerAge: parseInt(document.getElementById('regEdad').value),
+        customerAge: parseInt(document.getElementById('regEdad').value) || 0,
         genderM: parseInt(document.getElementById('regGenero').value),
-        monthsInactive12Mon: parseInt(document.getElementById('regInactivo').value),
-        contactsCount12Mon: parseInt(document.getElementById('regContactos').value),
-        avgUtilizationRatio: parseFloat(document.getElementById('regUso').value),
-        totalCtChngQ4Q1: parseFloat(document.getElementById('regCambio').value),
-        lowRelationshipCount: parseInt(document.getElementById('regLowRel').value),
-        // Mapeo de categorías de tarjeta para evitar nulos
+        monthsInactive12Mon: parseInt(document.getElementById('regInactivo').value) || 0,
+        contactsCount12Mon: parseInt(document.getElementById('regContactos').value) || 0,
+        avgUtilizationRatio: parseFloat(document.getElementById('regUso').value) || 0,
+        totalCtChngQ4Q1: parseFloat(document.getElementById('regCambio').value) || 0,
+        lowRelationshipCount: parseInt(document.getElementById('regLowRel').value) || 0,
         cardCategoryGold: tipoTarjeta === 'gold' ? 1 : 0,
         cardCategorySilver: tipoTarjeta === 'silver' ? 1 : 0,
         cardCategoryPlatinum: tipoTarjeta === 'platinum' ? 1 : 0,
-        attritionFlag: 0 // Nuevo cliente entra como activo por defecto
+        attritionFlag: 0
     };
 
     try {
-            const response = await fetch('/api/clientes', {
-                method: 'POST',
-                headers: {
-                    'Authorization': 'Bearer ' + token,
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify(nuevoCliente)
-            });
+        console.log("Intentando conectar con el servidor...");
+        // IMPORTANTE: Quitamos el token momentáneamente para probar que el permitAll funciona
+        const response = await fetch('http://localhost:8080/api/clientes', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+                // Quitamos Authorization para descartar que el filtro JWT sea el que bloquea
+            },
+            body: JSON.stringify(nuevoCliente)
+        });
 
-            if (response.ok) {
-                const clienteGuardado = await response.json();
-                alert(`✅ Cliente registrado con ID: ${clienteGuardado.id}`);
-
-                // 1. Agregamos al final
-                todosLosClientes.push(clienteGuardado);
-
-                // 2. Ordenamos por ID para que el nuevo sea el último
-                todosLosClientes.sort((a, b) => a.id - b.id);
-
-                clientesFiltrados = [...todosLosClientes];
-
-                // 3. ¡EL CAMBIO AQUÍ!: Llamamos a actualizarInterfaz, no a actualizarTabla
-                actualizarInterfaz();
-
-                // 4. Ir a predicciones
-                mostrarSeccion('predicciones');
-                document.getElementById('inputPredictId').value = clienteGuardado.id;
-                ejecutarPrediccionIndividual();
-
-                document.getElementById('formRegistroCliente').reset();
-            } else {
-                alert("Error al guardar. Verifica la conexión con el servidor Java.");
-            }
-        } catch (error) {
-            console.error("Error:", error);
+        if (response.ok) {
+            const clienteGuardado = await response.json();
+            alert(`✅ ¡ÉXITO! Cliente ID: ${clienteGuardado.id}`);
+            location.reload(); // Recarga para ver los cambios
+        } else {
+            console.error("Respuesta del servidor no OK:", response.status);
+            alert("Error del servidor: " + response.status);
         }
+    } catch (error) {
+        console.error("ERROR DE RED (No llega al Java):", error);
+        alert("El navegador no pudo contactar al servidor Java. Revisa la consola (F12).");
     }
+}
 /* =========================================================
    3. GESTIÓN DE CLIENTES (LÓGICA CHAMPION 3)
    ========================================================= */

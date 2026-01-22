@@ -21,6 +21,7 @@ public class ClienteController {
     // Endpoint para guardar un cliente
     @PostMapping
     public ResponseEntity<Cliente> crearCliente(@RequestBody Cliente cliente) {
+        System.out.println("DEBUG: ¡La petición llegó al controlador!"); // Si esto no sale en consola, es Seguridad.
         return ResponseEntity.ok(clienteService.guardarCliente(cliente));
     }
 

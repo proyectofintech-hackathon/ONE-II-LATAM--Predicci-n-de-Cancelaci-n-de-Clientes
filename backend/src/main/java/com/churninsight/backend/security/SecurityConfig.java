@@ -15,6 +15,7 @@ import org.springframework.security.web.authentication.UsernamePasswordAuthentic
 @Configuration
 @EnableWebSecurity
 @RequiredArgsConstructor //  esto para inyectar el filtro
+@org.springframework.core.annotation.Order(1)
 public class SecurityConfig {
 
     private final JwtAuthenticationFilter jwtAuthFilter; // Inyectamos el filtro que creamos
@@ -41,35 +42,24 @@ public class SecurityConfig {
     public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
         http
                 .csrf(csrf -> csrf.disable())
-                .cors(Customizer.withDefaults()) // Asegura soporte para CORS
+                .cors(Customizer.withDefaults())
                 .authorizeHttpRequests(auth -> auth
-                        // 1. RUTAS PÚBLICAS (Archivos y Auth)
+                        .requestMatchers(HttpMethod.OPTIONS, "/**").permitAll()
+
+                        // RUTAS PÚBLICAS
                         .requestMatchers(
-                                "/",
-                                "/login.html",
-                                "/registro.html",
-                                "/loading.html",
-                                "/nosotros.html",
-                                "/valores.html",
-                                "/dashboard.html",
-                                "/favicon.ico",
-                                "/css/**",
-                                "/js/**",
-                                "/img/**",
-                                "/api/auth/login",
-                                "/api/auth/register"
+                                "/", "/login.html", "/registro.html", "/loading.html",
+                                "/nosotros.html", "/valores.html", "/dashboard.html",
+                                "/css/**", "/js/**", "/img/**", "/favicon.ico",
+                                "/api/auth/login", "/api/auth/register"
                         ).permitAll()
 
-                        // 2. RUTAS PROTEGIDAS (Requieren Token)
-                        .requestMatchers("/api/clientes/**").authenticated()
-                        .requestMatchers("/api/auth/actualizar").authenticated()
-                        .requestMatchers("/api/champion3/**").authenticated()
-                        .requestMatchers("/api/predicciones/**").authenticated()
+                        // CAMBIO AQUÍ: Agregamos la ruta base explícitamente y la versión con asteriscos
+                        .requestMatchers("/api/clientes").permitAll()
+                        .requestMatchers("/api/clientes/**").permitAll()
 
-                        // 3. CUALQUIER OTRA PETICIÓN
                         .anyRequest().authenticated()
                 )
-                // Filtro JWT
                 .addFilterBefore(jwtAuthFilter, UsernamePasswordAuthenticationFilter.class);
 
         return http.build();

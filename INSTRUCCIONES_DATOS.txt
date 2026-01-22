@@ -1,24 +1,40 @@
-===========================================================
-GUÍA DE CARGA DE DATOS - PROYECTO CHURN
-===========================================================
+GUÍA DE CARGA Y CONFIGURACIÓN DE DATOS - PROYECTO CHURN
+Esta guía permite poblar la base de datos con los 10,127 registros iniciales y configurar el sistema para que permita registros nuevos sin conflictos de ID.
 
-Para que la aplicación muestre los 10,127 clientes, sigue estos pasos
-una vez que tengas Docker corriendo:
+Requisito Previo
+Asegúrate de estar en la carpeta raíz del proyecto (donde se encuentra el archivo datos_limpios.txt) y que los contenedores de Docker estén encendidos.
 
-1. COPIAR EL ARCHIVO AL CONTENEDOR:
-   Abre una terminal en la raíz del proyecto y ejecuta:
-   docker cp datos_limpios.txt churn_db_container:/tmp/datos_limpios.txt
+PASO 1: LIMPIEZA INICIAL (Opcional pero Recomendado)
+Si ya intentaste cargar datos antes o quieres empezar desde cero, limpia las tablas y reinicia los contadores:
 
-2. IMPORTAR LOS DATOS (ORDEN CRÍTICO DE COLUMNAS):
-   Ejecuta el siguiente comando. Este orden es el único que funciona
-   con el formato del TXT y evita errores de sintaxis:
+PowerShell
+docker exec -it churn_db_container psql -U postgres -d churn_db -c "TRUNCATE TABLE clientes RESTART IDENTITY CASCADE;"
 
-   docker exec -it churn_db_container psql -U postgres -d churn_db -c "\copy clientes(id, attrition_flag, customer_age, months_inactive12mon, contacts_count12mon, total_ct_chngq4q1, avg_utilization_ratio, low_relationship_count, genderm, card_category_gold, card_category_platinum, card_category_silver) FROM '/tmp/datos_limpios.txt' WITH (FORMAT text, DELIMITER E'\t');"
+PASO 2: COPIAR EL ARCHIVO AL CONTENEDOR
+Copia el archivo de datos desde tu máquina local al almacenamiento temporal del contenedor:
 
-3. VERIFICAR CARGA:
-   Para confirmar que están todos, ejecuta:
-   docker exec -it churn_db_container psql -U postgres -d churn_db -c "SELECT COUNT(*) FROM clientes;"
+PowerShell
+docker cp datos_limpios.txt churn_db_container:/tmp/datos_limpios.txt
 
-NOTA: Si da error de "duplicate key", vacía la tabla primero con:
-docker exec -it churn_db_container psql -U postgres -d churn_db -c "TRUNCATE TABLE clientes CASCADE;"
-===========================================================
+PASO 3: IMPORTACIÓN MASIVA (Orden Crítico)
+Ejecuta la importación. Este comando respeta la estructura exacta del archivo de texto para evitar errores de tipo de dato:
+
+PowerShell
+docker exec -it churn_db_container psql -U postgres -d churn_db -c "\copy clientes(id, attrition_flag, customer_age, months_inactive12mon, contacts_count12mon, total_ct_chngq4q1, avg_utilization_ratio, low_relationship_count, genderm, card_category_gold, card_category_platinum, card_category_silver) FROM '/tmp/datos_limpios.txt' WITH (FORMAT text, DELIMITER E'\t');"
+
+PASO 4: SINCRONIZACIÓN DE IDs (Paso Maestro) 🔑
+IMPORTANTE: Al importar IDs manualmente, el contador interno de Postgres se queda en 1. Debemos moverlo al final de la lista (ID 10127) para que los nuevos registros empiecen desde el 10128:
+
+PowerShell
+docker exec -it churn_db_container psql -U postgres -d churn_db -c "SELECT setval(pg_get_serial_sequence('clientes', 'id'), (SELECT MAX(id) FROM clientes));"
+
+PASO 5: VERIFICACIÓN FINAL
+Confirma que la base de datos tiene todos los registros:
+
+PowerShell
+docker exec -it churn_db_container psql -U postgres -d churn_db -c "SELECT COUNT(*) FROM clientes;"
+
+NOTAS PARA EL EQUIPO
+
+Velocidad: Al cargar la web, el navegador procesará más de 10,000 filas. Puede tardar unos segundos en mostrar la tabla completa dependiendo de la potencia de la PC.
+

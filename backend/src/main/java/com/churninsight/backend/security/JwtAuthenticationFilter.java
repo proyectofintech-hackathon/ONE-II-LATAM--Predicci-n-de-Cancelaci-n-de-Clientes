@@ -51,6 +51,7 @@ public class JwtAuthenticationFilter extends OncePerRequestFilter {
             } catch (Exception e) {
                 // Si el token falla, simplemente no autenticamos, no lanzamos error 500
                 System.out.println("Error validando JWT: " + e.getMessage());
+                System.out.println("DEBUG: El filtro JWT capturó un error pero dejará pasar la petición: " + e.getMessage());
             }
 
         }
