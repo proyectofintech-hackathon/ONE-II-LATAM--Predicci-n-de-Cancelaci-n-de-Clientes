@@ -88,15 +88,23 @@ Para asegurar una correcta planificación, desarrollo e integración de la soluc
 
 **👥​ Equipo de Back-end**
 
-- ***Juan Huina***
-  
-  [![LinkedIn](https://img.shields.io/badge/LinkedIn-Perfil-blue?logo=linkedin)](https://www.linkedin.com/in/juan-huina-webdesign/)
-  [![GitHub](https://img.shields.io/badge/GitHub-Repo-black?logo=github)](https://github.com/jhuina)
-
 - ***Ianjaner alfonso beltran guañarita***
   
   [![LinkedIn](https://img.shields.io/badge/LinkedIn-Perfil-blue?logo=linkedin)](https://www.linkedin.com/in/ianjaner-alfonso-beltran-guañarita)
   [![GitHub](https://img.shields.io/badge/GitHub-Repo-black?logo=github)](https://github.com/ianjaner75)
+
+  **🎨 Equipo de Front-end**
+
+***Linda Roció Olmedo Reyes***
+  
+  [![LinkedIn](https://img.shields.io/badge/LinkedIn-Perfil-blue?logo=linkedin)](https://www.linkedin.com/in/linda-roc%C3%ADo-web051275/)
+  [![GitHub](https://img.shields.io/badge/GitHub-Repo-black?logo=github)]()
+
+***Ianjaner alfonso beltran guañarita***
+  
+  [![LinkedIn](https://img.shields.io/badge/LinkedIn-Perfil-blue?logo=linkedin)](www.linkedin.com/in/ianjaner-alfonso-beltran-guañarita)
+  [![GitHub](https://img.shields.io/badge/GitHub-Repo-black?logo=github)](https://github.com/ianjaner75)
+
 
 ## 🛠️ Tecnologías utilizadas 
 
@@ -165,8 +173,8 @@ Herramientas:
   - Docker (contenedores)
 
 ### **Equipo Frontend**
-  - Tecnologias (en construccion)
-  - Herramientas (en construccion)
+  - Tecnologias (HTML, CSS, Bootstrap)
+  - Herramientas (Canva)
 
 # Diagrama de Arquitectura del Proyecto
 
