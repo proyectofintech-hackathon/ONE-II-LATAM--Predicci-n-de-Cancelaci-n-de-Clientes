@@ -4,7 +4,7 @@ Este proyecto tiene como objetivo desarrollar una solución orientada a la **pre
 
 La cancelación de clientes (*churn*) representa uno de los principales desafíos en los modelos de negocio basados en servicios financieros. Anticipar este comportamiento permite a las empresas implementar estrategias de retención más efectivas, optimizar recursos y mejorar la experiencia del usuario.
 
-La API desarrollada combina técnicas de Data Science y Marchine Learning, permitiendo integrar el modelo predictivo de una manera siemple en los sistemas existentes. De esta manera, la **API** posibilita aplicar analítica predictiva para respaldar decisiones basadas en datos y optimizar las entrategias del negocio. 
+La API desarrollada combina técnicas de Data Science y Marchine Learning, permitiendo integrar el modelo predictivo de una manera simple en los sistemas existentes. De esta manera, la **API** posibilita aplicar analítica predictiva para respaldar decisiones basadas en datos y optimizar las entrategias del negocio. 
 
 ## 🎯 Objetivo
 
@@ -14,7 +14,7 @@ La API desarrollada combina técnicas de Data Science y Marchine Learning, permi
 - Exponer la predicción mediante una API.
 
 ## 🧩 Arquitectura
-Nuestra **API esta diseñada para permitir la integracion simple y escalable, orientada a la toma de decisiones basadas en datos, facilitando la incorporación del modelo predictivo en distintos sistemas y contextos de negocios.
+Nuestra **API esta diseñada para permitir la integración simple y escalable, orientada a la toma de decisiones basadas en datos, facilitando la incorporación del modelo predictivo en distintos sistemas y contextos de negocios.
 
 ## ⚙️ Setup
 
@@ -60,14 +60,14 @@ Para asegurar una correcta planificación, desarrollo e integración de la soluc
   [![LinkedIn](https://img.shields.io/badge/LinkedIn-Perfil-blue?logo=linkedin)](https://www.linkedin.com/in/ianjaner-alfonso-beltran-guañarita)
   [![GitHub](https://img.shields.io/badge/GitHub-Repo-black?logo=github)](https://github.com/ianjaner75)
 
-## 📊 Data Science
+## 📊 Data Science Google Cloud Platform ☁️
 
-**👥​ Equipo de Data Science**
-
-- ***Gonzalo Costela***
+- ***Gonzalo Costela*** 
   
-  [![LinkedIn](https://img.shields.io/badge/LinkedIn-Perfil-blue?logo=linkedin)](https://www.linkedin.com/in/gonzalocostela) 
+  [![LinkedIn](https://img.shields.io/badge/LinkedIn-Perfil-blue?logo=linkedin)](https://www.linkedin.com/in/gonzalocostela)
   [![GitHub](https://img.shields.io/badge/GitHub-Repo-black?logo=github)](https://github.com/Haruki-24)
+
+  **👥​ Equipo de Data Science**
 
 - ***Linda Rocio Olmedo Reyes***
   
