@@ -60,8 +60,9 @@ Para asegurar una correcta planificación, desarrollo e integración de la soluc
   [![LinkedIn](https://img.shields.io/badge/LinkedIn-Perfil-blue?logo=linkedin)](https://www.linkedin.com/in/ianjaner-alfonso-beltran-guañarita)
   [![GitHub](https://img.shields.io/badge/GitHub-Repo-black?logo=github)](https://github.com/ianjaner75)
 
-## 📊 Data Science Google Cloud Platform ☁️
+## 📊 Data Science
 
+**Data Science & Google Cloud Platform ☁️**
 - ***Gonzalo Costela*** 
   
   [![LinkedIn](https://img.shields.io/badge/LinkedIn-Perfil-blue?logo=linkedin)](https://www.linkedin.com/in/gonzalocostela)
