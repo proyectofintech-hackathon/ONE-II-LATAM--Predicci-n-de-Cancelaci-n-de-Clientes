@@ -189,7 +189,7 @@ Herramientas:
 
 ### **Equipo Frontend**
   - Tecnologias (HTML, CSS, Bootstrap)
-  - Herramientas (Canva)
+  - Herramientas (Canva, Filmora)
 
 # Diagrama de Arquitectura del Proyecto
 
