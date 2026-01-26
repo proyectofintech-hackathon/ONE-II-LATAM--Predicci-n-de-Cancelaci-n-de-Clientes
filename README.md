@@ -35,14 +35,10 @@ Nuestra **API esta diseñada para permitir la integración simple y escalable, o
   
 ### Instalación: 
 
-- ( En Construccion)
-
 
 ## 🔗 Enlaces a recursos
 - 📁 Repositorio del proyecto:https://github.com/proyectofintech-hackathon/ONE-II-LATAM--Predicci-n-de-Cancelaci-n-de-Clientes 
-- 📊 Dataset utilizado: 
 - 📓 Notebook de Data Science:https://www.notion.so/Proyecto-Krypton-2e8d24359eb3804caf3ac78204e8bfc5 
-- ⚙️ API REST: http://35.208.157.23:8080/login.html
 - 🧪 Pruebas de la API:http://35.208.157.23:8080/login.html
 
 👥 Organización del Equipo
