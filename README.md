@@ -151,6 +151,11 @@ Librerias_principales:
   - NumPy (cálculo)
   - Scikit-learn (ML)
   - Matplotlib/Seaborn (visualización)
+  - Flask
+  - Flask-cors
+  - Joblib
+  - xgboost
+  - Catboost
     
 Herramientas:
   - Git/GitHub
