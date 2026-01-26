@@ -20,7 +20,18 @@ Nuestra **API esta diseñada para permitir la integración simple y escalable, o
 
 ### Requisitos: 
 
-- (En construccion )
+*Stack de Ejecución**
+
+- **Runtime Backend:** Java 21 (LTS) / Spring Boot 3.2.
+- **Runtime ML:** Python 3.11.x (CPython).
+- **Contenedores:** Docker Engine 24.0+ / Alpine Linux Base Images.
+- **Orquestación:** Docker Compose V2 o Kubernetes Helm Charts.
+
+ **Recursos de Hardware (Mínimos)**
+
+- **CPU:** 4 vCPUs (x86_64).
+- **RAM:** 8 GB Total (Heap Java: 2GB | RAM ML Engine: 4GB).
+- **Storage:** 20 GB SSD (IOPS optimizados para logs de inferencia).
   
 ### Instalación: 
 
@@ -28,11 +39,11 @@ Nuestra **API esta diseñada para permitir la integración simple y escalable, o
 
 
 ## 🔗 Enlaces a recursos
-- 📁 Repositorio del proyecto:
-- 📊 Dataset utilizado:
-- 📓 Notebook de Data Science:
-- ⚙️ API REST:
-- 🧪 Pruebas de la API:
+- 📁 Repositorio del proyecto:https://github.com/proyectofintech-hackathon/ONE-II-LATAM--Predicci-n-de-Cancelaci-n-de-Clientes 
+- 📊 Dataset utilizado: 
+- 📓 Notebook de Data Science:https://www.notion.so/Proyecto-Krypton-2e8d24359eb3804caf3ac78204e8bfc5 
+- ⚙️ API REST: http://35.208.157.23:8080/login.html
+- 🧪 Pruebas de la API:http://35.208.157.23:8080/login.html
 
 👥 Organización del Equipo
 ---
